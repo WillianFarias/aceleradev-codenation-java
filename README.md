@@ -6,6 +6,8 @@
     </thead>
 
     <tbody>
-        <Java 1.8>
+        <tr>
+            <td>Java 1.8</td>
+        </tr>
     </tbody>
 </table>
