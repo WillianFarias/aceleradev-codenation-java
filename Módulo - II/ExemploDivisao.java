@@ -2,6 +2,10 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
  
 public class ExemploDivisao {
+
+  //throw/throws propagam excecoes que devem ser tratadas em algum momento
+  //throws declara as exceções que podem ser lançadas em determinado método
+  //throw cria um novo objeto de exceção que é lançada
    
   public static int calculaQuociente(int numerador, int denominador) throws ArithmeticException{
     return numerador / denominador;
