@@ -1,4 +1,4 @@
-package br.com.curso.disciplinas;
+package br.com.curso;
 
 public class MainProcedural {
     public static void main(String[] args) {
