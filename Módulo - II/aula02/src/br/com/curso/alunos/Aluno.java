@@ -6,7 +6,7 @@ public class Aluno {
     private String cpf;
     private String nome;
 
-    public Aluno(String login, String cpf, String nome) {
+    public Aluno(String login, String cpf, String nome) throws ValidationException {
         setLogin(login);
         setCpf(cpf);
         setNome(nome);
@@ -31,11 +31,13 @@ public class Aluno {
         return login;
     }
 
-    public void setLogin(String login) {
+    public void setLogin(String login) throws ValidationException { //throws na assinatura do método quer dizer que este
+        //método pode lancar uma excessao
         if (validateLogin(login)){
             this.login = login;
         } else {
-            System.out.println("Login inválido");
+            throw new ValidationException("Login inválido");
+            //throw new RuntimeException(); estou passando o erro para tempo de execucao
         }
 
     }
