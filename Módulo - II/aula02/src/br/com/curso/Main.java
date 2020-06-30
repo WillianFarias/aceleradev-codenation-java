@@ -41,7 +41,9 @@ public class Main {
 
             repositorioUsuario.add(professor);
             repositorioUsuario.add(aluno);
+
             repositorioUsuario.findAll().stream().forEach(System.out::println);
+            
         } catch (ValidationException | LimiteAlunosAlcancadoException e) {
             System.out.println(e.getMessage());
         }
