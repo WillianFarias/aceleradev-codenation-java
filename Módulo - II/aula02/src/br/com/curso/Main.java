@@ -7,6 +7,7 @@ import br.com.curso.disciplinas.LimiteAlunosAlcancadoException;
 import br.com.curso.lancadornotas.LancadorNotas;
 import br.com.curso.professor.Professor;
 import br.com.curso.usuario.UsuarioAutorizavel;
+import br.com.curso.usuario.UsuarioAutorizavelAbstract;
 import br.com.curso.usuario.repositorio.RepositorioUsuario;
 
 public class Main {
@@ -49,7 +50,7 @@ public class Main {
             System.out.println(e.getMessage());
         }
 
-        UsuarioAutorizavel usuario = new Professor("1234", "04244931256", "Feijão");
+        UsuarioAutorizavelAbstract usuario = new Professor("1234", "04244931256", "Feijão");
         new LancadorNotas().login(usuario);
 
     }
