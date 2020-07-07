@@ -1,22 +1,16 @@
-public class Pessoa implements Ser{
+import java.math.BigDecimal;
 
-  //reflection eu teria que setar a visibilidade ou concatenar o método get
+public class Pessoa {
+
+  // reflection eu teria que setar a visibilidade ou concatenar o método get
   @Somar
-  private String nome;
-  
-  @Override
-  public void Falar(String nome){
-    System.out.println(nome);
+  private int valor;
+
+  public String getValor() {
+    return valor;
   }
 
-  public String getNome() {
-    return nome;
+  public void setValor(String valor) {
+    this.valor = valor;
   }
-
-  public void setNome(String nome) {
-    this.nome = nome;
-  }
-
-
-  
 }

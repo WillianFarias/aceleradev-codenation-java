@@ -17,7 +17,7 @@ public class TesteReflection {
       }
     }*/
     Pessoa pessoa = new Pessoa();
-    pessoa.setNome("Willian");
+    pessoa.setValor("Willian");
     String nome = "";
 
 
