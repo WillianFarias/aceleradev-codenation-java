@@ -2,56 +2,21 @@ import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 public class TesteReflection {
   public static void main(String[] args) {
 
-    /*
-    Annotation[] annotations = Pessoa.class.getAnnotations();
-
-    for (Annotation annotation : annotations) {
-      for (Annotation annotation2 : Somar) {
-        if (condition) {
-          
-        }
-      }
-    }*/
     Pessoa pessoa = new Pessoa();
-    pessoa.setValor("Willian");
-    String nome = "";
+    pessoa.setValor(new BigDecimal("100"));
+    pessoa.setValor2(new BigDecimal("50"));
+    pessoa.setIdade(15);
 
+    Reflect novoReflect = new Reflect();
+    BigDecimal valor = novoReflect.somar(pessoa);
+    System.out.println(valor);
 
-    String metodo = "";
-    Field[] fields = Pessoa.class.getDeclaredFields();
-    for (Field field : fields) {
-      //System.out.println(field.getName());
-      //System.out.println(field.getType());
-      if (field.getDeclaredAnnotation(Somar.class) != null) {
-        System.out.println(field.getName());
-        metodo = field.getName();
-      }
-      //System.out.println(field.getDeclaredAnnotation(Somar.class));
-    }
-
-    //914
-    Method[] methods = Pessoa.class.getMethods();
-    for (Method method : methods) {
-      if (method.getName().toUpperCase().contains("GET" + metodo.toUpperCase())){
-        try {
-          String valor = (String) method.invoke(pessoa);
-          nome = valor;
-        } catch (IllegalAccessException | InvocationTargetException e) {
-          e.printStackTrace();
-        }
-      }
-    }
-
-    System.out.println(nome);
-
-    /*
-    Method[] metodos = Pessoa.class.getMethods();
-    for (Method method : metodos) {
-      System.out.println(method.getName().toString());
-    }*/
   }
 }
