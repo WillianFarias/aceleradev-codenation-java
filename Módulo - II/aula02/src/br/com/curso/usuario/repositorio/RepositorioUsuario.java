@@ -1,7 +1,6 @@
 package br.com.curso.usuario.repositorio;
 
 import br.com.curso.usuario.Usuario;
-import com.sun.xml.internal.bind.v2.runtime.property.StructureLoaderBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
