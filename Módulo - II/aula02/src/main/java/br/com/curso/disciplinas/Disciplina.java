@@ -21,12 +21,11 @@ public class Disciplina {
     @JoinTable(name = "disciplina_aluno", joinColumns =
             {@JoinColumn(name = "idDisciplina")}, inverseJoinColumns =
             {@JoinColumn(name = "idAluno")})
+    private List<Aluno> alunos = new ArrayList<>();
 
     @ManyToOne
     @JoinColumn(name = "idProfessor")
     private Professor professor;
-
-    private List<Aluno> alunos = new ArrayList<>();
 
 
     public Disciplina(String nome, Professor professor) {

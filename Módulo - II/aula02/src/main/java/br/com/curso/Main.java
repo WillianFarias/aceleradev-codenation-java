@@ -10,10 +10,23 @@ import br.com.curso.usuario.UsuarioAutorizavel;
 import br.com.curso.usuario.UsuarioAutorizavelAbstract;
 import br.com.curso.usuario.repositorio.RepositorioUsuario;
 
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
 public class Main {
 
     public static void main(String[] args) throws ValidationException {
 
+        EntityManagerFactory factory = Persistence.createEntityManagerFactory("curso");
+
+
+
+        factory.close();
+
+
+
+
+        /*
         // Aluno aluno1 = new Aluno("Teste Login", "042.449.931-23", "Teste Sousa");
         Aluno aluno1 = null;
         try {
@@ -23,20 +36,19 @@ public class Main {
             // imprimindo pilha de execucao
             // e.printStackTrace();
         }
-        /*
+
          * System.out.println(aluno1); aluno1 = null; if (aluno1 != null){
          * aluno1.setNome("Willian"); }
-         */
         RepositorioUsuario repositorioUsuario = new RepositorioUsuario();
 
         try {
             Professor professor = new Professor("professor", "04244993123", "Professor Solva");
             Disciplina disciplina = new Disciplina("Matematica", professor);
             // tentando matricular 15 alunos
-            /*
+
              * for (int i = 1; i <= 15; i++){ disciplina.matricular(new Aluno("aluno",
              * "04235632147", "Aluno" + i)); }
-             */
+
             Aluno aluno = new Aluno("aluno", "04235632147", "Aluno Silva");
             disciplina.matricular(aluno);
             // disciplina.mostrarAlunos();
@@ -51,7 +63,7 @@ public class Main {
         }
 
         UsuarioAutorizavelAbstract usuario = new Professor("1234", "04244931256", "Feijão");
-        new LancadorNotas().login(usuario);
+        new LancadorNotas().login(usuario);*/
 
     }
 

@@ -3,15 +3,13 @@ package br.com.curso.alunos;
 import br.com.curso.disciplinas.Disciplina;
 import br.com.curso.usuario.Usuario;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
 public class Aluno extends Usuario {
 
+    @Column(nullable = false, length = 14, unique = true)
     private Integer matricula;
 
     @ManyToMany

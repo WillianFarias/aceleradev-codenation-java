@@ -2,10 +2,7 @@ package br.com.curso.usuario;
 
 import br.com.curso.alunos.ValidationException;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
+import javax.persistence.*;
 
 @Entity
 //anotacao relacionada ao fato da classe ser herdada por demais classes
@@ -15,8 +12,13 @@ public class Usuario {
     @Id
     private Long id;
 
+    @Column(nullable = false)
     private String login;
+
+    @Column(nullable = false, length = 14, unique = true)
     private String cpf;
+
+    @Column(nullable = false)
     private String nome;
 
     public Usuario(String login, String cpf, String nome) throws ValidationException {
