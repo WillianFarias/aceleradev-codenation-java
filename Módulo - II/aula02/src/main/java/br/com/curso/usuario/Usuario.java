@@ -2,7 +2,18 @@ package br.com.curso.usuario;
 
 import br.com.curso.alunos.ValidationException;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+
+@Entity
+//anotacao relacionada ao fato da classe ser herdada por demais classes
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Usuario {
+
+    @Id
+    private Long id;
 
     private String login;
     private String cpf;
@@ -55,4 +66,8 @@ public class Usuario {
     public void setNome(String nome) {
         this.nome = nome;
     }
+
+    public Long getId() { return id; }
+
+    public void setId(Long id) { this.id = id; }
 }

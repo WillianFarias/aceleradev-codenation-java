@@ -3,15 +3,31 @@ package br.com.curso.disciplinas;
 import br.com.curso.alunos.Aluno;
 import br.com.curso.professor.Professor;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
 public class Disciplina {
 
-    private String nome;
-    private List<Aluno> alunos = new ArrayList<>();
     private static final byte LIMITE = 10;
+    @Id
+    private Long id;
+    private String nome;
+    private String descricao;
+
+    //relacionamento muito pra muitos
+    @ManyToMany
+    @JoinTable(name = "disciplina_aluno", joinColumns =
+            {@JoinColumn(name = "idDisciplina")}, inverseJoinColumns =
+            {@JoinColumn(name = "idAluno")})
+
+    @ManyToOne
+    @JoinColumn(name = "idProfessor")
     private Professor professor;
+
+    private List<Aluno> alunos = new ArrayList<>();
+
 
     public Disciplina(String nome, Professor professor) {
         this.nome = nome;
@@ -32,6 +48,15 @@ public class Disciplina {
         this.alunos.stream().forEach(aluno -> System.out.println(aluno.getNome()));
     }
 
+    public Long getId() { return id; }
 
+    public void setId(Long id) { this.id = id; }
 
+    public String getNome() { return nome; }
+
+    public void setNome(String nome) { this.nome = nome; }
+
+    public String getDescricao() { return descricao; }
+
+    public void setDescricao(String descricao) { this.descricao = descricao; }
 }
