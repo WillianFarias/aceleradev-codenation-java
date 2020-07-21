@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/artigo-spring-data-jpa-algaworks/artigo-spring-data-jpa-algaworks.iml" filepath="$PROJECT_DIR$/artigo-spring-data-jpa-algaworks/artigo-spring-data-jpa-algaworks.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/cod-artigo-spring-data-jpa-algaworks.iml" filepath="$PROJECT_DIR$/.idea/cod-artigo-spring-data-jpa-algaworks.iml" />
+    </modules>
+  </component>
+</project>
