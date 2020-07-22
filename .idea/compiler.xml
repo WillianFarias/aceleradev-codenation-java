@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="aula02" />
+        <module name="artigo-spring-data-jpa" />
+        <module name="artigo-spring-boot" />
+        <module name="biblioteca" />
+        <module name="artigo-spring-data-jpa-algaworks" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="artigo-spring-boot" target="1.8" />
+      <module name="artigo-spring-data-jpa" target="1.8" />
+      <module name="artigo-spring-data-jpa-algaworks" target="1.8" />
+      <module name="aula02" target="1.8" />
+      <module name="biblioteca" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="artigo-spring-boot" options="-parameters" />
+      <module name="artigo-spring-data-jpa-algaworks" options="-parameters" />
+      <module name="aula02" options="-Xlint:all,-processing" />
+      <module name="biblioteca" options="-parameters" />
+    </option>
+  </component>
+</project>
