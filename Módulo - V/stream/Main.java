@@ -46,7 +46,8 @@ public class Main {
       filter(pessoa -> pessoa.getNome().startsWith("M")).
       collect(toList());
 
-    pessoasComM.stream().forEach(pessoa -> System.out.println(pessoa.getNome()));
+    //pessoasComM.stream().forEach(pessoa -> System.out.println(pessoa.getNome()));  
+    pessoasComM.stream().forEach(System.out::println);
 
     //Count
     //retorna a quantidade de elementos presentes em uma stream
