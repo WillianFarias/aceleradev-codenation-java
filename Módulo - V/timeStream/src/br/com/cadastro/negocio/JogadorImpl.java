@@ -37,12 +37,12 @@ public class JogadorImpl {
 		List<String> listaDeLinhas = linhas.collect(Collectors.toList());
 		List<Jogador> listaDeJogadores = new ArrayList<>();
 		Jogador jogador;
-		Iterator it = listaDeLinhas.listIterator();
+		Iterator<?> it = listaDeLinhas.listIterator();
 		String str = null;
 		
 		while(it.hasNext()) {
 			str = (String) it.next();
-			String info[] = str.split(",");
+			String info[] = str.split(", ");
 			jogador = new Jogador();
 			jogador.setNome(info[0]);
 			jogador.setPosicao(info[1]);
@@ -57,6 +57,16 @@ public class JogadorImpl {
 	
 	public void imprimirJogador(List<Jogador> jogadores) {
 		jogadores.stream().forEach(System.out::println);
+	}
+
+	public void imprimirJogadorMaisVelho(List<Jogador> listaDeJogadores) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void imprimirJogadorMaisNovo(List<Jogador> listaDeJogadores) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 
