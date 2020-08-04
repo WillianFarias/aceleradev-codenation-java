@@ -2,11 +2,14 @@ import java.util.List;
 import java.util.stream.Stream;
 import java.util.stream.IntStream;
 import java.util.Comparator;
+import java.util.Optional;
 import static java.util.stream.Collectors.toList;
 
 public class Main {
 
   public static void main(String[] args) {
+
+    Optional<Pessoa> pessoaA;
 
     List<Pessoa> pessoas = new Pessoa().populaPessoas();
     Stream<Pessoa> stream = pessoas.stream().filter(pessoa -> pessoa.getNacionalidade().equals("Brasil"));
@@ -17,6 +20,9 @@ public class Main {
     filter(pessoa -> pessoa.getNacionalidade().equals("Brasil")).
     //Method Reference
     mapToInt(Pessoa::getIdade);
+
+    //streamIdade.forEach(System.out::println);
+    streamIdade.forEach(System.out::println);
 
     //sorted, ordenacao
     Stream<Pessoa> streamOrdenada = pessoas.stream().
@@ -30,7 +36,7 @@ public class Main {
     Stream<Pessoa> streamLimitada = pessoas.stream().limit(2);
 
     //Operacoes terminais, nunca retornam um stream
-    pessoas.stream().forEach(pessoa -> System.out.println(pessoa.getNome()));
+    pessoas.stream().forEach(System.out::println);
 
     //Exemplo de uso do método average(), utilizado para fazer a média de valores
     double media = pessoas.stream().filter(pessoa -> pessoa.getNacionalidade().

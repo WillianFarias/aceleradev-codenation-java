@@ -21,7 +21,7 @@ public class Pessoa {
     Pessoa pessoa1 = new Pessoa("p1", "Matheus Henrique", "Brasil", 18);
     Pessoa pessoa2 = new Pessoa("p2", "Hernandez Roja", "Mexico", 21);
     Pessoa pessoa3 = new Pessoa("p3", "Mario Fernandes", "Canada", 22);
-    Pessoa pessoa4 = new Pessoa("p4", "Neymar Junior", "Brasil", 22);  
+    Pessoa pessoa4 = new Pessoa("p4", "Neymar Junior", "Brasil", 25);  
 
     List<Pessoa> list = new ArrayList<Pessoa>();
 

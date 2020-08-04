@@ -5,6 +5,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
@@ -59,14 +60,14 @@ public class JogadorImpl {
 		jogadores.stream().forEach(System.out::println);
 	}
 
-	public void imprimirJogadorMaisVelho(List<Jogador> listaDeJogadores) {
-		// TODO Auto-generated method stub
-		
+	public void imprimirJogadorMaisVelho(List<Jogador> jogadores) {
+		Jogador jogador = jogadores.stream().max(Comparator.comparingInt(Jogador::getIdade)).get();
+		System.out.println("Jogador mais velho: " + jogador.getNome());
 	}
 
-	public void imprimirJogadorMaisNovo(List<Jogador> listaDeJogadores) {
-		// TODO Auto-generated method stub
-		
+	public void imprimirJogadorMaisNovo(List<Jogador> jogadores) {
+		Jogador jogador = jogadores.stream().min(Comparator.comparingInt(Jogador::getIdade)).get();
+		System.out.println("Jogador mais jovem: " + jogador.getNome());
 	}
 	
 
