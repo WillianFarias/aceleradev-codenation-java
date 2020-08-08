@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="vaidation-spring-boot">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/validation/vaidation-spring-boot.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
