@@ -4,7 +4,7 @@ import br.com.codenation.avaliacao.model.Avaliacao;
 import br.com.codenation.categoria.model.Categoria;
 
 import javax.persistence.*;
-import javax.validation.constraints.*;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Entity
@@ -15,16 +15,9 @@ public class Livro {
     private Long id;
 
     @NotNull
-    @NotBlank(message = "O Título não pode ser vazio")
     private String titulo;
 
-    @Min(0)
-    @Max(10)
-    @PositiveOrZero
-    private Long quantidadeEstoque;
-
     @OneToMany
-
     private List<Avaliacao> avaliacoes;
 
     @ManyToMany
@@ -72,14 +65,5 @@ public class Livro {
 
     public void setCategorias(List<Categoria> categorias) {
         this.categorias = categorias;
-    }
-
-
-    public Long getQuantidadeEstoque() {
-        return quantidadeEstoque;
-    }
-
-    public void setQuantidadeEstoque(Long quantidadeEstoque) {
-        this.quantidadeEstoque = quantidadeEstoque;
     }
 }

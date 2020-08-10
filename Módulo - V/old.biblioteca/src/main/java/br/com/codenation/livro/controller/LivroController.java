@@ -1,6 +1,5 @@
 package br.com.codenation.livro.controller;
 
-import br.com.codenation.controller.advice.ResourceNotFoundException;
 import br.com.codenation.livro.model.Livro;
 import br.com.codenation.livro.service.LivroService;
 import org.springframework.beans.factory.annotation.Autowired;
