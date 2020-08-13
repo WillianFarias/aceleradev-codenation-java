@@ -2,15 +2,16 @@ package br.com.codenation.entity;
 
 public class SimpleDestination {
 
-  private String name;
+  
   private String description;
+  private String info;
 
-  public String getName(){
-    return this.name;
+  public String getInfo(){
+    return this.info;
   }
 
-  public void setNome(String name){
-    this.name = name;
+  public void setInfo(String info){
+    this.info = info;
   }
 
   public String getDescription(){

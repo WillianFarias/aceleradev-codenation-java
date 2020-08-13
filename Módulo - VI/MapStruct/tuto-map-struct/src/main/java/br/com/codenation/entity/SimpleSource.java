@@ -2,15 +2,15 @@ package br.com.codenation.entity;
 
 public class SimpleSource {
 
-  private String name;
+  private String info;
   private String description;
 
-  public String getName(){
-    return this.name;
+  public String getInfo(){
+    return this.info;
   }
 
-  public void setNome(String name){
-    this.name = name;
+  public void setInfo(String info){
+    this.info = info;
   }
 
   public String getDescription(){
