@@ -8,7 +8,7 @@ import org.mapstruct.factory.Mappers;
 
 //Não é necessario implementar esta interface, pois o MapStruct faz isso por nos
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface SimpleSourceDestinationMapper {
 
   SimpleSourceDestinationMapper INSTANCE = Mappers.
