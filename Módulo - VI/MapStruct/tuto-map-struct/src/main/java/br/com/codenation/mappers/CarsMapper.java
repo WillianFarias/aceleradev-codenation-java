@@ -27,6 +27,7 @@ public abstract class CarsMapper {
         carDto.setName(carDto.getName().toUpperCase());
     }
 
+    //aqui é onde o mapeamento é feito
     public abstract CarDTO toCarDto(Car car);
 
 }
