@@ -1,6 +1,8 @@
 package br.com.codenation.mappers;
 
-import br.com.codenation.entity.*;
+import br.com.codenation.entity.SimpleDestination;
+import br.com.codenation.dto.SimpleSource;
+
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

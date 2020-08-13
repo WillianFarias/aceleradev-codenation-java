@@ -1,4 +1,4 @@
-package br.com.codenation.entity;
+package br.com.codenation.dto;
 
 public class SimpleSource {
 
