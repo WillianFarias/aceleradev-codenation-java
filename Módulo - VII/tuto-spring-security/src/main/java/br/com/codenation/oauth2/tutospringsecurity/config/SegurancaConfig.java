@@ -14,6 +14,25 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 @EnableWebSecurity
 @EnableAuthorizationServer
 @EnableResourceServer
-public class SegurancaConfig {
+public class SegurancaConfig extends WebSecurityConfigurerAdapter {
+
+  //necessario para que o authenticationManager fique disponivel para a api
+  @Bean
+	@Override
+	protected AuthenticationManager authenticationManager() throws Exception {
+		return super.authenticationManager();
+	}
+  
+  //Configuranto usuario da api restfull
+	@Override
+	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+		auth.inMemoryAuthentication().withUser("alexandre").password("123").roles("ADMIN");
+	}
+  
+  //necessario para que seja possivel utilizar este usuario
+	@Bean
+	public PasswordEncoder passwordEncoder() {
+		return NoOpPasswordEncoder.getInstance();
+	}
 
 }
