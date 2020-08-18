@@ -11,7 +11,7 @@ import br.com.codenation.oauth2.tutospringsecurity.model.Cliente;
 import br.com.codenation.oauth2.tutospringsecurity.repository.ClienteRepository;
 
 @RestController
-@RequestMapping("/clientess")
+@RequestMapping("/clientes")
 public class ClienteService {
 	
 	@Autowired
