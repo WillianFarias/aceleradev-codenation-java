@@ -10,9 +10,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @ControllerAdvice
 public class LivroControllerAdvice {
 
-    //ExceptionHandler determina qual a classe de exceção o método ira tratar
-    //ResponseStatus informa qual status code será retornado
-    //ResponseBody indica que o método retornara uma string
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ResponseBody

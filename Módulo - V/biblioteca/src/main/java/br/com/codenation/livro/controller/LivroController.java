@@ -3,6 +3,9 @@ package br.com.codenation.livro.controller;
 import br.com.codenation.controller.advice.ResourceNotFoundException;
 import br.com.codenation.livro.model.Livro;
 import br.com.codenation.livro.service.LivroService;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
@@ -21,6 +24,10 @@ public class LivroController {
     private LivroService livroService;
 
     @PostMapping
+    //Anotacao swager
+    @ApiOperation("Cria um novo livro")
+    //resposta referente ao endpoint
+    @ApiResponses(value = {@ApiResponse(code = 201, message = "Livro criado com sucesso")})
     public ResponseEntity<Livro> create(@Valid @RequestBody Livro livro) {
         return new ResponseEntity<Livro>(this.livroService.save(livro), HttpStatus.CREATED);
     }
@@ -31,6 +38,7 @@ public class LivroController {
     }
 
     @GetMapping
+    @ApiOperation("Lista todos os livros")
     public Iterable<Livro> findAll(@PathParam("nome") String nome, Pageable pageable) {
         if (nome != null) {
             return this.livroService.findByNome(nome.toString(), pageable);
@@ -39,9 +47,10 @@ public class LivroController {
     }
 
     @GetMapping("/{id}")
+    @ApiResponses(value = {@ApiResponse(code = 404, message = "Livro não localizado"), @ApiResponse(code = 200, message = "Livro localizado")})
     public ResponseEntity<Livro> findById(@PathVariable("id") Long id) {
         return new ResponseEntity<Livro>(this.livroService.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Livro")),HttpStatus.OK);
+                .orElseThrow(() -> new ResourceNotFoundException("Livro")), HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")

@@ -13,14 +13,13 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 
-//AuthenticationServer - autentica user
-//AuthorizationServer - Autoriza utilizacao de servicos de acordo com o user
-//ResourceServer - serviços
-
+//AuthenticationServer - Login
+//AuthorizationServer - Quais servicos cada usuario tem acesso
+//ResourceServer - propria api, servido onde estao os recursos
 @EnableWebSecurity
 @EnableAuthorizationServer
 @EnableResourceServer
-public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+public class SegurancaConfiguration extends WebSecurityConfigurerAdapter {
 
 
     @Autowired
