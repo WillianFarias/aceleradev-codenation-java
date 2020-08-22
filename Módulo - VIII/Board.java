@@ -1,4 +1,7 @@
-/*class Board {
+/*
+1. Only One Level Of Indentation Per Method
+''
+class Board {
   public String board() {
       StringBuilder buf = new StringBuilder();
 
@@ -18,7 +21,7 @@
 
 //Refatorando
 public class Board {
-  
+
   public String data[][];
 
   public String board() {
@@ -42,6 +45,28 @@ public class Board {
 
       buf.append("\n");
   }
+}
+
+/*
+2. Don’t Use The ELSE Keyword
+public void login(String username, String password) {
+    if (userRepository.isValid(username, password)) {
+        redirect("homepage");
+    } else {
+        addFlash("error", "Bad credentials");
+
+        redirect("login");
+    }
+}*/
+
+public void login(String username, String password) {
+  if (userRepository.isValid(username, password)) {
+      return redirect("homepage");
+  }
+
+  addFlash("error", "Bad credentials");
+
+  return redirect("login");
 }
 
 
