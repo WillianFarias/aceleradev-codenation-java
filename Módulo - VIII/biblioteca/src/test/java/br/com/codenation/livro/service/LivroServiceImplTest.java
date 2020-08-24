@@ -31,15 +31,17 @@ public class LivroServiceImplTest {
     @Test
     public void testFindMaiorMediaAvaliacao() {
         mockFindLivrosComAvaliacao();
-        assertEquals(new Integer(4),
+        assertEquals(new Integer(5),
          livroServiceImpl.findByMaiorMediaAvaliacao().getMediaAvaliacoes());
     }
 
 
     private void mockFindLivrosComAvaliacao() {
         Livro livro = mock(Livro.class);
+        Livro livroDois = mock(Livro.class);
         when(livro.getMediaAvaliacoes()).thenReturn(4);
-        when(this.livroRepository.findComAvaliacao()).thenReturn(Arrays.asList(livro));
+        when(livroDois.getMediaAvaliacoes()).thenReturn(5);
+        when(this.livroRepository.findComAvaliacao()).thenReturn(Arrays.asList(livro, livroDois));
     }
 
 
