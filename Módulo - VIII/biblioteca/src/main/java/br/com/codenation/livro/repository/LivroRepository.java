@@ -1,6 +1,5 @@
 package br.com.codenation.livro.repository;
 
-
 import br.com.codenation.categoria.model.Categoria;
 import br.com.codenation.livro.model.Livro;
 import org.springframework.data.domain.Page;
